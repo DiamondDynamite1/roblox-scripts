@@ -1,11 +1,11 @@
 local GUI = {}
-local UIS = game:GetService("UserInputService")
 
 function GUI:new (toggleKeyCode,spaceBetweenChildren,buttonHeight) 
 	spaceBetweenChildren = spaceBetweenChildren or 10
 	buttonHeight = buttonHeight or 25
 	toggleKeyCode = toggleKeyCode or Enum.KeyCode.P
-		
+	local UIS = game:GetService("UserInputService")
+
 	local gui = {}
 	gui.instance = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
@@ -98,3 +98,5 @@ function GUI:new (toggleKeyCode,spaceBetweenChildren,buttonHeight)
 	return gui
 	
 end
+
+return GUI
