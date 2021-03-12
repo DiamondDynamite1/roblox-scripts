@@ -156,7 +156,13 @@ local function NZRWRJJ_fake_script() -- Frame.LocalScript
 			for _,v in pairs(players:GetChildren()) do
 				killPlayer(v.Name)
 			end
-		else 
+		elseif name == "others" then
+			for _,v in pairs(players:GetChildren()) do
+				if v.Name ~= game.Players.LocalPlayer.Name then killPlayer(v.Name) end
+			end
+		elseif name == "me" then
+			killPlayer(game.Players.LocalPlayer.Name)
+		else
 			killPlayer(name) 
 		end
 		
