@@ -49,7 +49,7 @@ function GUI:new (toggleKeyCode,spaceBetweenChildren,buttonHeight)
 		end
 	end
 
-	function gui:addButton (text,onclick)
+	function gui:addButton (text)
 		local Button = Instance.new("TextButton")
 		local ButtonUICorner = Instance.new("UICorner")
 		Button.Name = text
@@ -64,9 +64,7 @@ function GUI:new (toggleKeyCode,spaceBetweenChildren,buttonHeight)
 		Button.TextSize = 20.000
 		ButtonUICorner.CornerRadius = UDim.new(0, 20)
 		ButtonUICorner.Parent = Button
-		if onclick then
-			Button.MouseButton1Click:Connect(onclick)
-		end
+		
 		scaleFrame()
 		setChildrenPos()
 		return Button
